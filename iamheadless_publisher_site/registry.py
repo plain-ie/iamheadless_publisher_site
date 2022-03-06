@@ -72,7 +72,7 @@ class ItemTypeRegistry:
         urlpatterns = []
         for key in self.item_types.keys():
             model = self.item_types[key]
-            _urlpatterns = model.URLPATTERNS
+            _urlpatterns = model._urlpatterns
             if isinstance(_urlpatterns, list) is False:
                 _urlpatterns = [_urlpatterns, ]
             urlpatterns += _urlpatterns

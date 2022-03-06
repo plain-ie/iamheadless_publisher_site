@@ -49,6 +49,7 @@ class BaseItemPydanticModel(BaseModel):
     _item_type = None
     _primary_language = settings.DEFAULT_LANGUAGE[0]
     _secondary_language = None
+    _urlpatterns = []
 
     #
     id: Optional[str]
@@ -91,12 +92,6 @@ class BaseItemPydanticModel(BaseModel):
 
     @property
     def CONTENTS(self):
-        return []
-
-    #
-
-    @property
-    def URLPATTERNS(self):
         return []
 
     #
