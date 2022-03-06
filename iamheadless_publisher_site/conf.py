@@ -35,7 +35,7 @@ class Settings:
         client = getattr(
             dj_settings,
             self.VAR_API_CLIENT,
-            'iamheadless_publisher_site.clients.ModelClient'
+            f'{self.APP_NAME}.clients.ModelClient'
         )
 
         self._API_CLIENT = load(client)()
@@ -87,7 +87,7 @@ class Settings:
         return getattr(
             dj_settings,
             self.VAR_ITEM_TYPE_REGISTRY_CLASS,
-            'iamheadless_publisher_site.registry.ItemTypeRegistry'
+            f'{self.APP_NAME}.registry.ItemTypeRegistry'
         )
 
     @property
@@ -112,9 +112,6 @@ class Settings:
     @property
     def SERIALIZER_LIST(self):
         return getattr(dj_settings, self.VAR_SERIALIZER_LIST, [])
-
-    def __getattr__(self, name):
-        return getattr(dj_settings, name)
 
 
 settings = Settings()
