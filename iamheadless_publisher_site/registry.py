@@ -72,10 +72,11 @@ class ItemTypeRegistry:
         urlpatterns = []
         for key in self.item_types.keys():
             model = self.item_types[key]
-            _urlpatterns = model._urlpatterns
-            if isinstance(_urlpatterns, list) is False:
-                _urlpatterns = [_urlpatterns, ]
-            urlpatterns += _urlpatterns
+            if model._browsable is True:
+                _urlpatterns = model._urlpatterns
+                if isinstance(_urlpatterns, list) is False:
+                    _urlpatterns = [_urlpatterns, ]
+                urlpatterns += _urlpatterns
         return urlpatterns
 
     def serialize(self, objects, many=False):

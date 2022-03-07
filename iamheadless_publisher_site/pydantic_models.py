@@ -42,12 +42,14 @@ class BaseItemDataPydanticModel(BaseModel):
 
 class BaseItemPydanticModel(BaseModel):
 
+    _browsable = False
     _content_model = BaseItemContentsPydanticModel
     _data_model = BaseItemDataPydanticModel
     _display_name_plural = None
     _display_name_singular = None
     _item_type = None
     _primary_language = settings.DEFAULT_LANGUAGE[0]
+    _searchable = False
     _secondary_language = None
     _urlpatterns = []
 
