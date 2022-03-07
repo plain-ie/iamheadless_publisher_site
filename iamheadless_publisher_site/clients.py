@@ -75,4 +75,7 @@ class ModelClient(BaseClient):
             format='dict'
         )
 
+        if data is None:
+            return None
+
         return settings.ITEM_TYPE_REGISTRY.serialize(data)

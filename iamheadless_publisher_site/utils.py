@@ -21,5 +21,11 @@ def get_request_slug(request):
 
 
 def get_url_patterns():
-    print('------- patterns', settings.ITEM_TYPE_REGISTRY.get_urlpatterns())
     return settings.ITEM_TYPE_REGISTRY.get_urlpatterns()
+
+
+def get_allowed_language_codes():
+    languages = []
+    for x in settings.LANGUAGES:
+        languages.append(x[0])
+    return languages

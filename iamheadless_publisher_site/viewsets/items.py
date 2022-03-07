@@ -1,7 +1,9 @@
 from django.core.exceptions import ObjectDoesNotExist
 from django.shortcuts import render
+from django.utils.decorators import method_decorator
 
 from ..conf import settings
+from .. import decorators
 from .. import utils
 from .base import BaseViewSet
 
@@ -14,6 +16,7 @@ class ItemsViewSet(BaseViewSet):
     template = None
     param_name_page = 'page'
 
+    @method_decorator(decorators.has_allowed_language(), name='dispatch')
     def get(self, request, language):
         return render(request, self.get_template(), context=self.get_context())
 
