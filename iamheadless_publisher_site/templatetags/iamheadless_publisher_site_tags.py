@@ -2,7 +2,7 @@ import datetime
 
 from django import template
 
-from .conf import settings
+from ..conf import settings
 from .. import utils
 
 
