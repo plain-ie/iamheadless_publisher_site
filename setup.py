@@ -1,32 +1,18 @@
 from distutils.core import setup
 
+
 setup(
-
-    # Application name:
     name="iamheadless_publisher_site",
-
-    # Application author details:
+    description="#",
+    long_description=open("README.txt").read(),
+    url="#",
+    license="LICENSE",
     author="Maris Erts",
     author_email="maris@plain.ie",
-
-    # Packages
-    packages=["iamheadless_publisher_site"],
-
-    # Include additional files into the package
+    version="0.0.1",
     include_package_data=True,
-
-    # Details
-    url="#",
-
-    #
-    license="LICENSE",
-    description="#",
-
-    # long_description=open("README.txt").read(),
-
-    # Dependent packages (distributions)
+    packages=["iamheadless_publisher_site"],
     install_requires=[
         "Django==4.0.3",
     ],
-
 )
