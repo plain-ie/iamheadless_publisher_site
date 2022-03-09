@@ -5,9 +5,6 @@ setup(
     # Application name:
     name="iamheadless_publisher_site",
 
-    # Version number (initial):
-    version="0.0.6",
-
     # Application author details:
     author="Maris Erts",
     author_email="maris@plain.ie",
@@ -28,8 +25,8 @@ setup(
     # long_description=open("README.txt").read(),
 
     # Dependent packages (distributions)
-    install_requires=[
-        "Django==4.0.1",
+    extras_require=[
+        "django>=4.0.2",
     ],
 
 )
