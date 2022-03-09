@@ -13,6 +13,6 @@ setup(
     include_package_data=True,
     packages=["iamheadless_publisher_site"],
     install_requires=[
-        "Django==4.0.3",
+        "Django==4.0.1",
     ],
 )
