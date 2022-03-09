@@ -56,7 +56,7 @@ def main_menu(context):
 
 @register.simple_tag
 def project_title():
-    return getattr(settings, 'PROJECT_TITLE')
+    return settings.PROJECT_TITLE
 
 
 @register.filter(name='pydantic_model_value')
