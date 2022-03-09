@@ -6,7 +6,7 @@ setup(
     name="iamheadless_publisher_site",
 
     # Version number (initial):
-    version="0.0.1",
+    version="0.0.6",
 
     # Application author details:
     author="Maris Erts",
