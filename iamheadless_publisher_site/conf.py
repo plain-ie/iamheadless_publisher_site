@@ -23,6 +23,10 @@ class Settings:
     VAR_PROJECT_TITLE = f'{VAR_PREFIX}_PROJECT_TITLE'
     VAR_SERIALIZER_LIST = f'{VAR_PREFIX}_SERIALIZER_LIST'
     VAR_GOOGLE_ANALYTICS_ID = f'{VAR_PREFIX}_GOOGLE_ANALYTICS_ID'
+    #
+    VAR_FOOTER_TEMPLATE = f'{VAR_PREFIX}_FOOTER_TEMPLATE'
+    VAR_MAIN_MENU_TEMPLATE = f'{VAR_PREFIX}_MAIN_MENU_TEMPLATE'
+    VAR_TEMPLATE = f'{VAR_PREFIX}_TEMPLATE'
 
     CACHE_TIMEOUT_REDIRECTS = 10
 
@@ -112,6 +116,34 @@ class Settings:
     @property
     def SERIALIZER_LIST(self):
         return getattr(dj_settings, self.VAR_SERIALIZER_LIST, [])
+
+    #
+    #
+    #
+
+    @property
+    def FOOTER_TEMPLATE(self):
+        return getattr(
+            dj_settings,
+            self.VAR_FOOTER_TEMPLATE,
+            f'{self.APP_NAME}/footer.html'
+        )
+
+    @property
+    def MAIN_MENU_TEMPLATE(self):
+        return getattr(
+            dj_settings,
+            self.VAR_MAIN_MENU_TEMPLATE,
+            f'{self.APP_NAME}/main_menu.html'
+        )
+
+    @property
+    def TEMPLATE(self):
+        return getattr(
+            dj_settings,
+            self.VAR_TEMPLATE,
+            f'{self.APP_NAME}/item.html'
+        )
 
 
 settings = Settings()
