@@ -137,13 +137,5 @@ class Settings:
             f'{self.APP_NAME}/main_menu.html'
         )
 
-    @property
-    def TEMPLATE(self):
-        return getattr(
-            dj_settings,
-            self.VAR_TEMPLATE,
-            f'{self.APP_NAME}/item.html'
-        )
-
 
 settings = Settings()

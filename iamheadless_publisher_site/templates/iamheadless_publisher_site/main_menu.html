@@ -1,0 +1,21 @@
+{% load iamheadless_translate_tags %}
+{% load static %}
+
+{% translation_for 'toggle navigation' language as TEXT_TOGGLE_NAVIGATION %}
+{% translation_for 'home' language as TEXT_HOME %}
+{% translation_for 'language' language as TEXT_LANGUAGE %}
+{% translation_for 'search' language as TEXT_SEARCH %}
+{% translation_for 'current' language as TEXT_CURRENT %}
+
+
+<li>
+    <a href="/{{ language }}/">{{ TEXT_HOME|capfirst }}</a>
+</li>
+<li>
+    {{ TEXT_LANGUAGE|capfirst }}
+    <ul>
+        {% for link in language_links %}
+            <li><a href="{{ link.url }}">{{ link.display_name }}{% if link.language == language %} <small>({{ TEXT_CURRENT }})</small>{% endif %}</a></li>
+        {% endfor %}
+    </ul>
+</li>

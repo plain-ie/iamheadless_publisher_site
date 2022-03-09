@@ -1,0 +1,29 @@
+{% load iamheadless_publisher_site_tags %}
+{% load iamheadless_translate_tags %}
+{% load static %}
+
+{% site_language as language %}
+{% translation_for 'skip to main content' language as TEXT_SKIP_TO_MAIN_CONTENT %}
+
+<!doctype html>
+<html lang="{{ language }}">
+    <head>
+        {% block extra_head_top %}{% endblock %}
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>{% project_title %} - {{ page.title }}</title>
+        {% block seo %}{% endblock %}
+        {% block social_media %}{% endblock %}
+        {% block extra_head_bottom %}{% endblock %}
+    </head>
+    <body>
+        <a href="#main">{{ TEXT_SKIP_TO_MAIN_CONTENT|capfirst }}</a>
+        {% main_menu %}
+        <div role="main" id="main">
+            {% block content %}{% endblock %}
+        </div>
+        {% footer %}
+        {% block extra_js %}{% endblock %}
+    </body>
+</html>
