@@ -2,6 +2,7 @@ import datetime
 
 from django import template
 
+from .conf import settings
 from .. import utils
 
 
@@ -55,7 +56,7 @@ def main_menu(context):
 
 @register.simple_tag
 def project_title():
-    return getattr(iamheadless_publisher_site_settings, 'PROJECT_TITLE')
+    return getattr(settings, 'PROJECT_TITLE')
 
 
 @register.filter(name='pydantic_model_value')
