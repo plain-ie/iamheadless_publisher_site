@@ -26,7 +26,7 @@ setup(
 
     # Dependent packages (distributions)
     extras_require=[
-        "django>=4.0.2",
+        "Django==4.0.3",
     ],
 
 )
