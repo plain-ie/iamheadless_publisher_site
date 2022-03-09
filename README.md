@@ -9,3 +9,5 @@ App to render `iamheadless_publisher` site
 3. add `IAMHEADLESS_PUBLISHER_SITE_DEFAULT_LANGUAGE = ('en', 'English')` to `settings.py`
 4. add `IAMHEADLESS_PUBLISHER_SITE_LANGUAGES = (IAMHEADLESS_PUBLISHER_SITE_DEFAULT_LANGUAGE, )` to `settings.py`
 5. add `IAMHEADLESS_PUBLISHER_SITE_SERIALIZER_LIST` to `settings.py`
+
+
