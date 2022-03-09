@@ -25,7 +25,7 @@ setup(
     # long_description=open("README.txt").read(),
 
     # Dependent packages (distributions)
-    extras_require=[
+    install_requires=[
         "Django==4.0.3",
     ],
 
