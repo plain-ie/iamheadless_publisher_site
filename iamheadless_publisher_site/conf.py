@@ -137,5 +137,8 @@ class Settings:
             f'{self.APP_NAME}/main_menu.html'
         )
 
+    def __getattr__(self, name):
+        return getattr(dj_settings, name)
+
 
 settings = Settings()
