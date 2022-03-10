@@ -64,10 +64,10 @@ def pydantic_model_value(model, key):
     return getattr(model, key, None)
 
 
-@register.filter(name='pydantic_model_content')
+@register.simple_tag
 def pydantic_model_content(model, language):
     data = model.get_display_data(language)
-    return data['title']
+    return data
 
 
 @register.filter(name='pydantic_model_url')
