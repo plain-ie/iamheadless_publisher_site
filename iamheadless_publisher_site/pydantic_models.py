@@ -21,11 +21,11 @@ class BaseItemContentsPydanticModel(BaseModel):
 
     @classmethod
     def get_slug(cls, data):
-        return data['slug']
+        return data.get('slug', '')
 
     @classmethod
     def get_content(cls, data):
-        return data['content']
+        return data.get('content', '')
 
     @classmethod
     def get_seo_description(cls, data):
